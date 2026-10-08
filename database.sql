@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(255) NOT NULL
 );
 
--- إضافة مستخدم افتراضي (username: admin, password: admin123)
-INSERT INTO users (username, password) VALUES ('admin', MD5('admin123'));
+-- إضافة مستخدم افتراضي (username: admin, password: )
+INSERT INTO users (username, password) VALUES ('admin', MD5(''));
 
 -- جدول التسجيلات
 CREATE TABLE IF NOT EXISTS registrations (

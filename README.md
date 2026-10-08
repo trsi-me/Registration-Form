@@ -32,12 +32,12 @@
 التوثيق السابق يذكر:
 
 - اسم المستخدم `admin`
-- كلمة المرور `admin123`
+- كلمة المرور ``
 
 `database.sql` يدرج:
 
 ```sql
-INSERT INTO users (username, password) VALUES ('admin', MD5('admin123'));
+INSERT INTO users (username, password) VALUES ('admin', MD5(''));
 ```
 
 `login.php` يطبّق `md5` على المدخل ثم يقارن الناتج بالعمود. الخوارزمية MD5 باتجاه واحد داخل MySQL وداخل PHP. هذا ليس bcrypt وليس `password_hash`.
@@ -227,7 +227,7 @@ MD5 ثم مطابقة. الجلسة علم منطقي واسم المستخدم.
 1. خادم PHP وMySQL (التوثيق السابق يذكر XAMPP أو WAMP).
 2. إنشاء قاعدة بالاسم الذي يقرأه `config.php` وهو `registration`، ثم تنفيذ جزئي جداول SQL، أو تعديل `$dbname` ليطابق `u741730784_registration` بعد استيراد الملف كاملاً.
 3. فتح `login.php`.
-4. الدخول بـ `admin` / `admin123` كما في التوثيق السابق وملف SQL.
+4. الدخول بـ `admin` / `` كما في التوثيق السابق وملف SQL.
 
 ## 31 دليل التطوير
 
@@ -285,7 +285,7 @@ PHP وmysqli وMySQL. متصفح.
 
 | البند | القيمة |
 | --- | --- |
-| دخول | `admin` / `admin123` |
+| دخول | `admin` / `` |
 | خوارزمية الدخول | MD5 |
 | قاعدة SQL | `u741730784_registration` |
 | قاعدة الإعداد | `registration` |
